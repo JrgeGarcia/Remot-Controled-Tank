@@ -80,24 +80,24 @@ void EUSCIA2_IRQHandler(void)
         P4->OUT &= ~BIT1;
         P4->OUT |= BIT2;
         P4->OUT &= ~BIT3;
-        TIMER_A2->CCR[1] = 45000;
-        TIMER_A2->CCR[2] = 45000;
+        TIMER_A2->CCR[1] = 4500;
+        TIMER_A2->CCR[2] = 4500;
         }
         if (c == 'f'){  //Backwards
         P4->OUT &= ~BIT0;
         P4->OUT |= BIT1;
         P4->OUT &= ~BIT2;
         P4->OUT |= BIT3;
-        TIMER_A2->CCR[1] = 50000;
-        TIMER_A2->CCR[2] = 50000;
+        TIMER_A2->CCR[1] = 5000;
+        TIMER_A2->CCR[2] = 5000;
         }
         if (c == 'l'){ //Left
         P4->OUT &= ~BIT0;
         P4->OUT |= BIT1;
         P4->OUT |= BIT2;
         P4->OUT &= ~BIT3;
-        TIMER_A2->CCR[1] = 45000;
-        TIMER_A2->CCR[2] = 30000;
+        TIMER_A2->CCR[1] = 4500;
+        TIMER_A2->CCR[2] = 3000;
         }
         if (c == 'r'){ //Right
         P4->OUT |= BIT0;
