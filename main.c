@@ -30,10 +30,10 @@ void main(void)
     P5->SEL0 |= (BIT6 | BIT7);
     P5->SEL1 &= ~(BIT6 | BIT7);
     TIMER_A2->CCR[0] = PERIOD1 -1;
-    TIMER_A2->CCTL [1] = TIMER_A_CCTLN_OUTMOD_7;
-    TIMER_A2->CCR[1] = 900;
-    TIMER_A2->CCTL [2] = TIMER_A_CCTLN_OUTMOD_7;
-    TIMER_A2->CCR[2] = 900;
+    TIMER_A2->CCTL [1] = TIMER_A_CCTLN_OUTMOD_7; //clear & reset
+    TIMER_A2->CCR[1] = 900;   //Wheel A
+    TIMER_A2->CCTL [2] = TIMER_A_CCTLN_OUTMOD_7; //clear & reset
+    TIMER_A2->CCR[2] = 900  //Wheel B
     TIMER_A2->CTL = TIMER_A_CTL_SSEL__SMCLK | TIMER_A_CTL_MC__UP |
             TIMER_A_CTL_CLR;
 
@@ -63,7 +63,7 @@ void main(void)
     NVIC->ISER[0] = 1 << (EUSCIA2_IRQn & 31);
     // enable global interrupts
     __enable_irq();
-   // sendString("Enter r for red, g for green, b for blue!\r\n"); // send message
+  
     while (1);
 }
 
